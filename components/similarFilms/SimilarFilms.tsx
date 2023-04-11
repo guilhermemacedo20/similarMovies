@@ -66,29 +66,28 @@ export default function SimilarFilms() {
   return (
     <>
       <div className={styles.description}>
-          <div>
-            <label >Insira o nome do filme: </label>
-            <input id="inputId"/>
-            <button onClick={getFilmName}>Buscar</button>
+
+        {selectFilms.length === 0 && 
+          <div className={styles.search}>
+            <label className={styles.searchLabel}>Insira o filme que deseja buscar: </label>
+            <input placeholder='Insira aqui o nome do filme' className={styles.searchInput} id="inputId"/>
+            <button className={styles.searchButton} onClick={getFilmName}>Buscar</button>
           </div>
-        </div>
+        }          
+      </div>
         { selectFilms.length > 0 && 
-          <div>
-          <p>Filmes selecionados: </p>
-          {selectFilms?.map((selectFilm)=>{
-            return(<>
-              <Image src={`https://image.tmdb.org/t/p/w400/${selectFilm.poster_path}`} alt={selectFilm.id.toString()} width={150} height={200}/>
-              {selectFilm.title}
-              <button onClick={() => removeFilm(selectFilm.id)}>Remover</button>
-            </>
-            )
-          })}
-          
-        </div>
-        }   
-        {selectFilms.length > 0 &&
-          <div>
-            <button onClick={()=> searchSimilars(selectFilms)}>Buscar filmes parecidos</button>
+          <div className={styles.selectFilmContainer}>
+            <p className={styles.selectFilmLabel}>Filme selecionado: </p>
+            {selectFilms?.map((selectFilm)=>{
+              return(
+              <>
+                <Image className={styles.selectFilmImage} src={`https://image.tmdb.org/t/p/w400/${selectFilm.poster_path}`} alt={selectFilm.id.toString()} width={250} height={300}/>
+                <p className={styles.selectFilmTitle}>{selectFilm.title}</p>
+                <button className={styles.searchSelectedFilm}  onClick={()=> searchSimilars(selectFilms)}>Buscar filmes parecidos</button>
+                <button className={styles.removeSelectedFilm} onClick={() => removeFilm(selectFilm.id)}>Remover Filme</button>                
+              </>
+              )
+            })}
           </div>
         }     
         <div className={styles.filmContainer}>

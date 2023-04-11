@@ -90,10 +90,6 @@ body {
   margin: 40px 0;
   border-top: 1px solid orange;
   padding-top: 20px;
-  bottom: 0;
-  position: fixed;
-  width: 100%;
-  text-align: center;
 }
 
 body {

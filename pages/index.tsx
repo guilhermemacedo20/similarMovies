@@ -15,7 +15,7 @@ export default function Home() {
         <div className={styles.principalContainer}>
           <h1>Descubra Filmes</h1>
           <Link href={'/similar-films'}>Filmes Similares</Link>
-          <Link href={'/recommendations'}>Recomendações</Link>
+          <Link href={'/recommendations'} className={styles.recommendations}>Recomendações</Link>
           <Link href={'/about-us'} className={styles.aboutUs}>Sobre o site</Link>
         </div>
       </main>

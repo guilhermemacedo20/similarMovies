@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '@/styles/Pages.module.scss'
 import Link from 'next/link'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Popular from '@/components/popular/Popular';
 
 export default function Page() {
   return (
@@ -14,6 +15,7 @@ export default function Page() {
       </Head>
       <main className={styles.main}>
         <Link className={styles.backArrow} href={"/"}><ArrowBackIcon /> Voltar</Link>
+        <Popular />
       </main>
     </>
   )

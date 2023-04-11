@@ -28,8 +28,13 @@
     font-weight: bold;
   }
 
+  .recommendations {
+    background-color: #1a5c1e;;
+  }
+
   .aboutUs {
-    background-color: #001e3a;
+    margin-top: 40px;
+    background-color: #000b16;
   }
 
 }
@@ -49,7 +54,12 @@
   p {
     margin-bottom: 10px;
     text-align: justify;
-    a{
+
+    strong {
+      color: #9e1717;
+    }
+
+    a {
       color: orange;
       text-decoration: underline;
     }
