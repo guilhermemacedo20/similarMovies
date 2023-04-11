@@ -1,28 +1,7 @@
-import Image from 'next/image'
-import styles from './popular.module.scss'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import FilmItem from '@/components/FilmItem/filmItem'
-
-export interface filmType {
-  adult: boolean
-  backdrop_path: string
-  genre_ids: Array<number>
-  id: number
-  original_language: string
-  original_title: string
-  overview: string
-  popularity: number
-  poster_path: string
-  release_date: string
-  title: string
-  video: boolean
-  vote_average: number
-  vote_count: number
-}
-interface filmsArray {
-  data:filmType[]
-}
+import { filmType, filmsArray } from '../types'
 
 export default function Popular() {
 
@@ -40,7 +19,7 @@ export default function Popular() {
 
   return (
     <>
-      <div className={styles.filmContainer}>
+      <div>
         {filmsName && filmsName.data.map((film : filmType,idx)=>{
           return(
             <div key={idx}>

@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Similar Movies</title>
+        <title>Descubra Filmes</title>
         <meta name="description" content="Just a test in next JS" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
