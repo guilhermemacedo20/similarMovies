@@ -8,6 +8,7 @@ export default function Document() {
         <Main />
         <NextScript />
       </body>
+      <footer className="footer">Desenvolvido por Guilherme Macedo</footer>
     </Html>
   )
 }

@@ -1,8 +1,9 @@
 import Head from 'next/head'
 import styles from '@/styles/Pages.module.scss'
 import Link from 'next/link'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <Head>
@@ -12,12 +13,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.principalContainer}>
-          <h1>Descubra Filmes</h1>
-          <Link href={'/similar-films'}>Filmes Similares</Link>
-          <Link href={'/recommendations'}>Recomendações</Link>
-          <Link href={'/about-us'} className={styles.aboutUs}>Sobre o site</Link>
-        </div>
+        <Link className={styles.backArrow} href={"/"}><ArrowBackIcon /> Voltar</Link>
       </main>
     </>
   )

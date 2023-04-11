@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from './film-item.module.scss'
-import { filmType } from '@/pages'
+import { filmType } from '../similarFilms/SimilarFilms'
 
 interface FilmItemType {
   film: filmType

@@ -1,0 +1,57 @@
+.main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 6rem;
+}
+
+.principalContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  h1 {
+    text-align: center;
+  }
+
+  a {
+    background-color: #7a1717;
+    min-width: 250px;
+    min-height: 40px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .aboutUs {
+    background-color: #001e3a;
+  }
+
+}
+.backArrow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 5px 15px;
+}
+.aboutUsContainer{
+  max-width: 300px;
+  font-size: 18px;
+  line-height: 25px;
+
+  p {
+    margin-bottom: 10px;
+    text-align: justify;
+    a{
+      color: orange;
+      text-decoration: underline;
+    }
+  }
+}
