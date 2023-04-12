@@ -6,7 +6,7 @@ export default async function getFilmName(
   res: NextApiResponse
 ) {
   try{
-    const result = await axios.get(`https://api.themoviedb.org/3/movie/${req.query.filmId}/recommendations?api_key=1fd9d0e013329f231ac2b285f03a2dd9&language=pt-BR`)
+    const result = await axios.get(`https://api.themoviedb.org/3/movie/${req.query.filmId}/recommendations?api_key=${process.env.API_KEY}&language=pt-BR`)
     .then((response)=> response.data.results
     .sort(() => Math.random() - 0.5)
     .slice(0,8))
