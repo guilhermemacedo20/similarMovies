@@ -9,11 +9,14 @@ export default function SimilarFilms() {
 
   const [filmsName,setFilmName] = useState<filmsArray>()
   const [selectFilms,setSelectFilms]= useState<filmType[]>([])
+  const [loading,setLoading] = useState(false)
 
   const getFilmName = async () => {
     const film = (document.getElementById('inputId') as HTMLInputElement).value
+    setLoading(true)
     if(film){
       setFilmName(await axios.get(`/api/getFilmName/${film}`))
+      setLoading(false)
     }else{
       alert("Insira o nome de um filme!")
     }
@@ -22,8 +25,10 @@ export default function SimilarFilms() {
 
   const searchSimilars = (films: filmType[]) => {
     setFilmName(undefined)
+    setLoading(true)
     films.map(async (film)=>{
       setFilmName(await axios.get(`/api/searchSimilars/${film.id}`))
+      setLoading(false)
     })          
     setSelectFilms([]) 
   }
@@ -47,7 +52,6 @@ export default function SimilarFilms() {
   return (
     <>
       <div className={styles.description}>
-
         {selectFilms.length === 0 && 
           <div className={styles.search}>
             <label className={styles.searchLabel}>Insira o filme que deseja buscar: </label>
@@ -56,6 +60,7 @@ export default function SimilarFilms() {
           </div>
         }          
       </div>
+      {loading && <div className='loading'>Carregando...</div>}
         { selectFilms.length > 0 && 
           <div className={styles.selectFilmContainer}>
             <p className={styles.selectFilmLabel}>Filme selecionado: </p>
