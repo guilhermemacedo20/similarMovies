@@ -11,7 +11,7 @@
 
     .filmOverview{
         max-width: 500px;
-        max-height: 75px;
+        max-height: max-content;
         overflow: hidden;
         text-overflow: "...";
     }
